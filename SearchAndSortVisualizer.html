@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html>
+    <head lang="en">
+        <meta charset="UTF-8">
+        <meta name="author" content="Kaleb Kohn">
+        <title>Search and Sort Visualizer</title>
+        <link rel="stylesheet" href="SearchAndSortVisualizer.css">
+        <script src="SearchAndSortVisualizer.js"></script> 
+    </head>
+    <body>
+        <div class="headersection">
+            <h1 style="text-align: center;">Search and Sort Visualizer</h1>
+            <div class="subtitles">
+                <h3>Search Algorithms</h3>
+                <h3>Length of List</h3>
+                <h3>Sort Algorithms</h3>
+            </div>
+            <div class="buttons">
+                <button>Binary Search</button>
+                <div style="float:right;">
+                    <button>Insertion Sort</button>
+                    <button onclick="selectionSort()">Selection Sort</button>
+                    <button>Merge Sort</button>
+                </div>
+            </div>
+        </div>
+        <div id="list" style="text-align: center;"> 
+        </div>
+    </body>
+</html>

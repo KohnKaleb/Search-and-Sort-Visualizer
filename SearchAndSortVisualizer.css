@@ -1,0 +1,12 @@
+.subtitles {
+    display: flex;
+    justify-content: space-between;
+}
+
+
+#list div {
+    width: 45px;
+    background-color: blue;
+    display: inline-block;
+    margin: 0 5px;
+}
