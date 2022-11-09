@@ -60,10 +60,45 @@ async function selectionSort(delay = 100) {
             }, 100)
         );
         
-        nums[i].style.backgroundColor="blue";
+        nums[i].style.backgroundColor= "purple";
     }
+
+    nums[nums.length - 1].style.backgroundColor = "purple";
 }
 
-function insertionSort() {
+async function insertionSort() {
+    let nums = document.querySelectorAll(".nums")
 
+    for (let i = 1; i < nums.length; ++i) {
+        nums[i].style.backgroundColor = "red";
+        let j = i - 1;
+        let key = nums[i];
+        while (j >= 0 && parseInt(nums[j].innerHTML) > parseInt(key.innerHTML)) {
+            nums[j].style.backgroundColor = "green";
+
+            await new Promise((resolve) =>
+                setTimeout(() => {
+                resolve();
+                }, 100)
+            );
+
+            let tempHeight = nums[j + 1].style.height;
+            let tempVal = nums[j + 1].innerHTML;
+            nums[j + 1].style.height = nums[j].style.height;
+            nums[j + 1].innerHTML = nums[j].innerHTML;
+            nums[j].innerHTML = tempVal;
+            nums[j].style.height = tempHeight;
+            nums[j].style.backgroundColor = "blue";
+
+            await new Promise((resolve) =>
+                setTimeout(() => {
+                resolve();
+                }, 100)
+            );
+
+            key = nums[j]
+            j = j - 1;
+        }
+        nums[i].style.backgroundColor = "blue";
+    }
 }
